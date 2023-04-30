@@ -8,20 +8,22 @@ import java.util.HashMap;
 
 @Repository
 public class MainRepoImpl implements MainRepo {
-    private final HashMap<Currency, Integer> currencyRepo = new HashMap<>();
+    private final HashMap<Currency, Long> currencyRepo = new HashMap<>();
+    public static final Long currencyVolume = 50000L;
+    public static final Long allVolume = currencyVolume * currencyVolume;
 
     public MainRepoImpl() {
-        currencyRepo.put(Currency.APPLE, 50000);
-        currencyRepo.put(Currency.POTATO, 50000);
+        this.currencyRepo.put(Currency.APPLE, currencyVolume);
+        this.currencyRepo.put(Currency.POTATO, currencyVolume);
     }
 
     @Override
-    public void update(Currency currency, Integer value) {
+    public void update(Currency currency, Long value) {
         currencyRepo.put(currency, value);
     }
 
     @Override
-    public Integer get(Currency currency) {
+    public Long get(Currency currency) {
         return currencyRepo.get(currency);
     }
 }

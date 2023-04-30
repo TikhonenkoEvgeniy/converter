@@ -1,1 +1,2 @@
-# converter
+# Converter pairs of currency
+## 

@@ -5,6 +5,6 @@ import com.example.converter.enums.Currency;
 import java.util.Map;
 
 public interface MainRepo {
-    void update(Currency currency, Integer value);
-    Integer get(Currency currency);
+    void update(Currency currency, Long value);
+    Long get(Currency currency);
 }
